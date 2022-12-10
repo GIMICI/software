@@ -2,7 +2,8 @@
 # encoding: utf-8
 
 import os
-from setuptools import setup, find_packages
+
+from setuptools import find_packages, setup
 
 REPO_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -25,8 +26,9 @@ REQUIRES = [
     "django-simple-captcha",
     "django-tagging",
     "flock",
-    "gunicorn",
-    "psycopg2",
+    "gunicorn[eventlet]",
+    "eventlet<0.30.3",  # https://github.com/benoitc/gunicorn/pull/2581
+    "psycopg2<2.9",  # https://code.djangoproject.com/ticket/32856
     "py3dns",  # pylibravatar missing dependency workaround
     "pylibravatar",
     "python3-memcached",
