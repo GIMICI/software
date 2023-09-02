@@ -1,4 +1,4 @@
-softwarecollections
+software
 ===================
 
 Software Collections Management Website
